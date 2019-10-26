@@ -2,8 +2,8 @@
 
 :root {
   --main-padding: 4em;
-  /* --light-gray: #daeeed; */
-  --light-gray: linear-gradient(to right,#fce3ec,#ffe8cc)
+  --lightGray: #aac;
+  --headingColor: linear-gradient(to right,#fce3ec,#ffe8cc)
 }
 
 body, html{
@@ -13,7 +13,7 @@ body, html{
 
 body{
   font-family: 'Open Sans', sans-serif;
-  color: #222;
+  color: #224;
   font-size: 1.2em;
 }
 
@@ -33,7 +33,7 @@ h2{
 
 h3{
   font-size: 40px;
-  background: var(--light-gray);
+  background: var(--headingColor);
   display: inline;
   font-weight: ligher;
   margin-left: calc(-1*var(--main-padding));
@@ -52,7 +52,7 @@ p{
 footer{
   padding-top:2em;
   padding-bottom:2em;
-  background: var(--light-gray);
+  background: var(--headingColor);
 }
 
 .copyright{
@@ -62,11 +62,11 @@ footer{
 
 .chart{
   max-width: 600px;
-  margin:3em auto;
-  border:1px solid var(--light-gray);
+  margin:3em 0;
+  border:1px solid var(--lightGray);
 }
 .chart.full{
-  max-width:800px;
+  max-width:100%;
 }
 
 .column-list{
@@ -74,12 +74,12 @@ footer{
 }
 
 table{
-  margin:0 auto;
+  margin:0;
   border-collapse: collapse;
   margin-bottom:1em;
 }
 td{
-  border:1px solid #999;
+  border:1px solid var(--lightGray);
   padding:0.1em 0.5em;
 }
 
