@@ -1131,12 +1131,14 @@ charts.push({
         colorByPoint: true,
         data: [{
           name: 'No Raise',
-          y: 70
+          y: 70,
+          sliced: true
         }, {
-          name: 'Received a raise',
-          y: 138,
-          sliced: true,
-
+          name: 'Raise via changing jobs',
+          y: 95
+        },{
+          name: 'Raise at same company',
+          y: 52
         }]
     }]
 }
