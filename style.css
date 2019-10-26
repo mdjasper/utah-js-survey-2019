@@ -102,4 +102,7 @@ thead td{
   h3:before{
     display:none;
   }
+  .column-list{
+    column-count: 1;
+  }
 }
