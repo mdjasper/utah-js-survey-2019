@@ -1,0 +1,275 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>2019 UtahJS pay and education survey results</title>
+    <meta name="description" content="Results and analysis of a 2019 survey of Utah JavaScript developers compensation and career progression.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png">
+    <script src="//code.highcharts.com/highcharts.js"></script>
+    <script src="//code.highcharts.com/highcharts-more.js"></script>
+    <script src="//code.highcharts.com/modules/exporting.js"></script>
+    <script src="//code.highcharts.com/modules/export-data.js"></script>
+    <script src="//code.highcharts.com/maps/modules/map.js"></script>
+    <script src="//code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="//code.highcharts.com/mapdata/countries/us/us-ut-all.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1><img src="logo.png" alt="" width="30"> 2019 UtahJS Survey Results</h1>
+      <p>In October of 2019, a survey of UtahJS members conducted through the group's slack channel around the topics of pay and education. Presented here are an analysis of the results, as well as some commentary, and a link to the raw result data.</p>
+      <p>Jump To:</p>
+      <ul>
+        <li><a href="#demographics">Demographics</a></li>
+        <li><a href="#compensation">Compensation</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#raises">Raises</a></li>
+        <li><a href="#previous">Previous years</a></li>
+        <li><a href="#biases">Caveats & Biases</a></li>
+        <li><a href="#about">Link to data & licenses</a></li>
+      </ul>
+
+      <p><em>Tip: For charts with lots of data, hover over (or click) a chart series in the label to see those points highlighted.</em></p>
+
+      <h2><a name="demographics">Demographics</a></h2>
+      <h3>I would consider myself a...</h3>
+      <p>This year members were asked to bucket themselves in to job-titles, such as "Junior Developer" or "HR Manager"</p>
+
+      <div id="job-titles-chart" class="chart"></div>
+
+      <p>Also, included in the Other category were (with 1 response each):</p>
+      <ul>
+        <li>Content Management/Media Design</li>
+        <li>Principal Engineer</li>
+        <li>SDET</li>
+        <li>Senior and Manager and Lead</li>
+        <li>Software Architect Extra-Ordinair!</li>
+        <li>Student</li>
+      </ul>
+
+      <h3>How much experience do people have in different roles?</h3>
+      <div id="job-titles-experience" class="chart"></div>
+      <p>This box plot shows similar results to previous years, with strong overlap of titles -- especially mid and senior level developers. Some observations:</p>
+      <ul>
+        <li>While the average for "Senior Developer" is 10 years, people are describing themselves with that label with as few as 3 years of experience.</li>
+        <li>Junior developer is the narrows band, with a range of 3 years from least to most experienced.</li>
+      </ul>
+
+      <h3>What general experience levels for all of the survey respondants?</h3>
+
+      <div id="overall-experience" class="chart"></div>
+
+      <div id="overall-experience-5" class="chart"></div>
+
+      <h3>Gender of respondants...</h3>
+
+      <p>This year the survey asked about gender, with the option of entering their own response in free-form text.</p>
+
+      <div id="gender" class="chart"></div>
+
+      <p>The responses for "other" are:</p>
+
+      <!-- <table>
+        <thead>
+          <tr><td>Response</td><td>Number</td></tr>
+        </thead>
+        <tr><td>Non-binary/genderqueer</td><td>2</td></tr>
+        <tr><td>Prefer not to say</td><td>1</td></tr>
+        <tr><td>Motorboat</td><td>1</td></tr>
+        <tr><td>Helicoptor</td><td>2</td></tr>
+      </table> -->
+
+      <ul>
+        <li>Prefer not to say (1)</li>
+        <li>Non-binary (1)</li>
+        <li>Non-binary; genderqueer (1)</li>
+        <li>Motorboat (1)</li>
+        <li>Helicoptor (1)</li>
+        <li>Apache Helicotor (1)</li>
+      </ul>
+
+      <p><em>Editorial note: Several survey responses were, I'm guessing, made in jest. However, with such a sensitive issue as gender identity, I don't believe it would be right to remove or modify any response. They are included above, and I hope it doesn't in any way invalidate or delegitimize the serious and personal "other" responses to this survey.</em></p>
+
+      <h3>Gender comparison to 2018</h3>
+
+      <div id="gender-comparison" class="chart"></div>
+
+      <h2><a name="compensation">Compensation</a></h2>
+      <p>This year, the survey included compensation questions about base bay (cash compensation), liquid equity (stock), non-recocurring bonuses, pay changes from changing employers, as well as important benefits.</p>
+
+      <h3>Total compensation</h3>
+      <!-- <p>Survey responses included several students, or people otherwise not earning (or reporting) their income. In this section, those responses will not be included in statistical analysis exept in the first section. Meaning the sum of base cash pay (aka salary), liquid equity, and bonuses across all experience levels is:</p> -->
+
+      <div id="total-comp-with-nones" class="chart"></div>
+
+      <h3>How does total compensation change with experience?</h3>
+      <div id="total-comp-by-experience" class="chart full"></div>
+
+      <h3>Of those that received equity or bonuses, what were they?</h3>
+      <p>78 of 208 respondants reported receiving equity or a bonus.</p>
+
+      <div id="received-non-cash" class="chart"></div>
+      <div id="non-cash-comp" class="chart"></div>
+
+      <h3>How does gender relate to compensation?</h3>
+      <h4>Showing salary only</h4>
+
+      <div id="salary-by-gender" class="chart full"></div>
+      <p>Zooming in on the experience area shows the distribution more clearly:</p>
+      <div id="salary-by-gender-zoomed" class="chart full"></div>
+      <h4>Total Compensation</h4>
+      <p>Does the distribution change when equity and bonuses are considered?</p>
+      <div id="tc-by-gender" class="chart full"></div>
+      <p>Zooming in on the experience area shows the distribution more clearly:</p>
+      <div id="tc-by-gender-zoomed" class="chart full"></div>
+
+      <h3>How does job title relate to compensation?</h3>
+      <div id="comp-by-title" class="chart"></div>
+      <h2><a name="education">Education</a></h2>
+      <h3>What is the distribution of education types?</h3>
+      <p>Survey respondants selected from a pre-defined list of types of education, or "other" with free-form text</p>
+      <div id="edu-type" class="chart"></div>
+      <p>Other responses inlcuded different certificate programs, high-school only, and mixture of some college & bootcamps</p>
+      <h3>Do different education types have different compensation distributions?</h3>
+      <div id="comp-by-edu" class="chart"></div>
+      <h3>Could compensation distribution differences be explained by experience, rather than education type?</h3>
+      <div id="comp-by-edu-exp" class="chart full"></div>
+      <p>Hover over "bootcamp" in the legend, and observe that the points are all clustered between 0-5 years of experience. While bootcamp graduates have a lower compensation when compared to other education types in general, they are within the same pay range as their peers at that experience level. I believe that this is explained by their years of experience in the industry -- not their education type.</p>
+      <p></p>
+      <h3>What type of degrees do respondants have?</h3>
+      <div id="degree-type" class="chart"></div>
+      <p>While Computer Science Bachelors and Masters degrees remain the largest type of degree held, as a whole, they are a minority to non-computer-science degree holders.</p>
+      <h4>"Other" degrees</h4>
+      <p>As a category, "other" is larger than CS, MIS, or Business degrees. The degree types vary widely, but include:</p>
+      <ul class="column-list">
+          <li>Advertising</li>
+          <li>Entertainment Business</li>
+          <li>Accounting</li>
+          <li>Masters Social Work</li>
+          <li>Biology (2)</li>
+          <li>Biomedical Engineering</li>
+          <li>Exercise Science</li>
+          <li>Chinese Literature</li>
+          <li>Communications (2)</li>
+          <li>Digital Media (3)</li>
+          <li>Electrical Engineering</li>
+          <li>English (3)</li>
+          <li>Graphic Design (2)</li>
+          <li>Geology (2)</li>
+          <li>History (2)</li>
+          <li>International Studies</li>
+          <li>Linguistics (4)</li>
+          <li>Marketing</li>
+          <li>Mathematics (2)</li>
+          <li>Mechanical Engineering (2)</li>
+          <li>Music</li>
+          <li>Neuroscience </li>
+          <li>Political science </li>
+          <li>Physics (2)</li>
+          <li>Psychology (4)</li>
+          <li>Sociology</li>
+          <li>Spanish</li>
+          <li>Statistics</li>
+          <li>Supply Chain Management</li>
+      </ul>
+      <h2><a name="location">Location</a></h2>
+      <h3>Where do respondants live?</h3>
+      <div id="live-location" class="chart"></div>
+
+      <h3>Where do respondants work?</h3>
+      <div id="work-location" class="chart"></div>
+      <p>At the risk of being a <a href="https://xkcd.com/1138/">"geographic profile map, which is basically just a population map"</a>, here are the results in tabular form</p>
+
+      <table>
+        <thead>
+          <tr><td>County</td><td>Live</td><td>Work</td></tr>
+        </thead>
+        <tbody>
+          <tr><td>Cache</td><td>4</td><td>3</td></tr>
+          <tr><td>Davis</td><td>17</td><td>6</td></tr>
+          <tr><td>Salt Lake</td><td>81</td><td>94</td></tr>
+          <tr><td>Utah</td><td>90</td><td>89</td></tr>
+          <tr><td>Washington</td><td>2</td><td>2</td></tr>
+          <tr><td>Weber</td><td>8</td><td>3</td></tr>
+        </tbody>
+      </table>
+      <h3>What about remote workers?</h3>
+      <p>4 respondants reported living remotely, meaning they live outside of Utah, but participate in UtahJS.</p>
+      <p>10 respondants reported working remotely, meaning they work outside of Utah.</p>
+      <h2><a name="benefits">Benefits</a></h2>
+      <h3>What are common benefits?</h3>
+      <p>Respondants were asked about other benefits they thought were particularly good. There were many responses, which were quite varied. Most common were:</p>
+      <ul>
+      <li>Fully-paid health insurance (aka. employer paid premiums) (46)</li>
+      <li>Unlimited PTO*  (48)</li>
+      <li>Matching 401k (20)</li>
+      <li>Good* paid parental leave (18)</li>
+      <li>Onsite gym</li>
+      <li>Onsite health clinic</li>
+      <li>Flexible schedule</li>
+      <li>Work from home</li>
+      <li>Paid or Catered Lunches</li>
+      <li>Education reimbursement</li>
+      <li>Gym membership reimbursement</li>
+    </ul>
+    <p>* <em>Jury is still out</em> if this is a benefit for the employer or the employee.</p>
+    <p>* What people concidered good varied. Most responses were between 4-6 weeks, but several were in the 3-4 month range of paid parental leave.</p>
+    <h2><a name="raises">Raises</a></h2>
+    <h3>How many people received a raise this year?</h3>
+    <p>138 respondants reported receiving a raise this year, either at their current employer or by moving to a new employer (raise via moving jobs).</p>
+    <div id="raise-received" class="chart"></div>
+
+    <h3>How does receiving a raise at your current employer compare with moving to a new employer?</h3>
+    <p></p>
+    <div id="raise-vs-move" class="chart"></div>
+    <p>This shows the distribution of the responses in terms of dollar amounts. However, a comparison of raises as a percentage of their salary may be more useful:</p>
+    <div id="raise-vs-move-box" class="chart"></div>
+    <h2><a name="previous">Previous Years Results</a></h2>
+    <p>This survey was conducted in 2017 and 2018 with similar questions. Those datasets and analysis can be found at:</p>
+    <ul>
+      <li>2018: <a href="https://mdjasper.github.io/utah-js-pay-data-2018/" target="_blank">https://mdjasper.github.io/utah-js-pay-data-2018/</a></li>
+      <li>2017: <a href="https://mdjasper.github.io/utah-js-pay-data/" target="_blank">https://mdjasper.github.io/utah-js-pay-data/</a></li>
+    </ul>
+    <h2><a name="biases">Caveats & Biases</a></h2>
+    <p>Some of my thoughts about this survey, and on ways this survey could be improved</p>
+    <h3>Response Numbers</h3>
+    <p>There were 208 responses, out of 3000 people in the #general channel (in Slack). This is about 7% of members. For this number of respondants and population size, we could say that we have a 95% confidence level, with a margin of error of about 6%. Not the best, but not the worst either.</p>
+    <h3>Self-selection</h3>
+    <p>Members of UtahJS self-selected into responding to the survey, and were not randomly sampled. It's not possible to know if there is a segment of UtahJS that was less or more likely to repond. I believe that there is good representation across years of experience, education types, and job titles. However, the representation of women in the survey decreased from last year. I don't know if a smaller percentage of the overall women participated in the survey this year, or perhaps the number of women who participate in UtahJS declined. In either case, the gender representation was not very diverse.</p>
+    <h3>Survivorship bias</h3>
+    <p>One particular bias that I would be concerned about in survey responses is survivorship bias, especially as it relates to education data. For example, if an individual who attended a bootcamp, and for a short time participated in UtahJS, but for whatever reason stopped participating (couldn't find a job, moved locations, etc), this persons experience would not be captured in the survey results. Or to put another way, the only data we have is for individuals who are successful enough in their careers to continue.</p>
+    <p>Because of this bias, we need to be careful about how we understand the survey results. It would not be correct to say that "people who are self-taught make $$ salary," rather "people who are in UtahJS who were self-taught make $$ salary," because those no longer participating aren't here to report their data.</p>
+    <p>Checkout one of my favorite-to-recommend articles for more info on survivorship bias: <a href="https://youarenotsosmart.com/2013/05/23/survivorship-bias/" target="_blank">https://youarenotsosmart.com/2013/05/23/survivorship-bias/</a></p>
+    </main>
+    <footer>
+      <h2><a name="about">About</a></h2>
+
+      <p>The survey was open October 14-18, 2019, and data was collected from members of the UtahJS Slack channel using Google Forms. The raw data can be publicly accessed <a href="https://docs.google.com/spreadsheets/d/1bPNo0ijFE6Og-KmT_GaolH8KA2K0CIKScqi2iibzt-A/edit?usp=sharing">here in Google Sheets</a></p>
+
+      <p>The survey was conducted, and this website was created by <a href="https://www.mikedoesweb.com" target="_blank">Michael Jasper</a>. Additional statistical analisys was provided by Brian Jasper.</p>
+
+      <h2>License and Copyright</h2>
+
+      <p>TL;DR to be as open as possible: the dataset is Open Database licenced, and the website, analysis, and commentary are MIT licenced</p>
+
+      <div class="copyright">
+        <p>This dataset "2019 UtahJS Survey Results" is made available under the Open Database License: <a href="http://opendatacommons.org/licenses/odbl/1.0/" target="_blank">http://opendatacommons.org/licenses/odbl/1.0/</a>. Any rights in individual contents of the database are licensed under the Database Contents License: <a href="http://opendatacommons.org/licenses/dbcl/1.0/" target="_blank">http://opendatacommons.org/licenses/dbcl/1.0/</a></p>
+      </div>
+      <p>This website, commentary, and analysis are made available under the MIT license:</p>
+
+      <div class="copyright">
+        <p>Copyright 2019 Michael Jasper</p>
+
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+        <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </div>
+    </footer>
+    <script src="charts.js"></script>
+  </body>
+</html>

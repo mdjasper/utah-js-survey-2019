@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Lora|Open+Sans&display=swap');
+
+:root {
+  --main-padding: 4em;
+  /* --light-gray: #daeeed; */
+  --light-gray: linear-gradient(to right,#fce3ec,#ffe8cc)
+}
+
+body, html{
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+  font-size: 1.2em;
+}
+
+main, footer{
+  max-width: 55em;
+  padding: 0 var(--main-padding);
+}
+
+h1, h2, h3,h4{
+  font-family: 'Lora', serif;
+}
+
+h2{
+  font-size: 35px;
+  margin-top:2em;
+}
+
+h3{
+  font-size: 40px;
+  background: var(--light-gray);
+  display: inline;
+  font-weight: ligher;
+  margin-left: calc(-1*var(--main-padding));
+  padding: 0 0.5em 0 var(--main-padding);
+}
+
+h3:before{
+  content: '▸ '
+}
+
+p{
+
+  line-height: 1.5em;
+}
+
+footer{
+  padding-top:2em;
+  padding-bottom:2em;
+  background: var(--light-gray);
+}
+
+.copyright{
+  font-family: 'Lora', serif;
+  font-size: 0.8em;
+}
+
+.chart{
+  max-width: 600px;
+  margin:3em auto;
+  border:1px solid var(--light-gray);
+}
+.chart.full{
+  max-width:800px;
+}
+
+.column-list{
+  column-count: 3;
+}
+
+table{
+  margin:0 auto;
+  border-collapse: collapse;
+  margin-bottom:1em;
+}
+td{
+  border:1px solid #999;
+  padding:0.1em 0.5em;
+}
+
+thead td{
+  border:0px;
+  padding-bottom:0.1em;
+}
+
+@media screen and (max-width:640px){
+  :root {
+    --main-padding: 1em;
+  }
+
+  h3{
+    font-size: 30px;
+    display: block;
+    margin-left: 0;
+    padding: 0;
+  }
+  h3:before{
+    display:none;
+  }
+}
