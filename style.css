@@ -96,8 +96,8 @@ thead td{
   h3{
     font-size: 30px;
     display: block;
-    margin-left: 0;
-    padding: 0;
+    margin-left: -1em;
+    padding:0 0 0 1em;
   }
   h3:before{
     display:none;
