@@ -1,5 +1,14 @@
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6431083-26"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-6431083-26');
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>2019 UtahJS pay and education survey results</title>
@@ -72,16 +81,6 @@
 
       <p>The responses for "other" are:</p>
 
-      <!-- <table>
-        <thead>
-          <tr><td>Response</td><td>Number</td></tr>
-        </thead>
-        <tr><td>Non-binary/genderqueer</td><td>2</td></tr>
-        <tr><td>Prefer not to say</td><td>1</td></tr>
-        <tr><td>Motorboat</td><td>1</td></tr>
-        <tr><td>Helicoptor</td><td>2</td></tr>
-      </table> -->
-
       <ul>
         <li>Prefer not to say (1)</li>
         <li>Non-binary (1)</li>
@@ -101,7 +100,6 @@
       <p>This year, the survey included compensation questions about base bay (cash compensation), liquid equity (stock), non-reoccuring bonuses, pay changes from changing employers, as well as important benefits.</p>
 
       <h3>Total compensation</h3>
-      <!-- <p>Survey responses included several students, or people otherwise not earning (or reporting) their income. In this section, those responses will not be included in statistical analysis exept in the first section. Meaning the sum of base cash pay (aka salary), liquid equity, and bonuses across all experience levels is:</p> -->
 
       <div id="total-comp-with-nones" class="chart"></div>
       <p>Two box plots are shown here: one including responses with zero compensation (students, out of work, taking time off), and one including those with jobs currently.</p>
