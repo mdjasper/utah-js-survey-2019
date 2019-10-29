@@ -757,7 +757,7 @@ charts.push({
       text: 'Compensation by Job Title'
     },
     subtitle: {
-      text: 'Base bay & Total Compensation'
+      text: 'Base pay & Total Compensation'
     },
     yAxis: [{
       // labels: { style: { color: colors[0] } },
