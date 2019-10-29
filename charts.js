@@ -980,17 +980,6 @@ Highcharts.mapChart('live-location', {
   title: {
       text: 'Counties where respondants live'
   },
-
-  // subtitle: {
-  //     text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/us/us-ut-all.js">Utah</a>'
-  // },
-
-  // mapNavigation: {
-  //     enabled: true,
-  //     buttonOptions: {
-  //         verticalAlign: 'bottom'
-  //     }
-  // },
   colorAxis: {
       min: 0
   },
@@ -1046,19 +1035,8 @@ Highcharts.mapChart('work-location', {
   },
 
   title: {
-      text: 'Counties where respondants live'
+      text: 'Counties where respondants work'
   },
-
-  // subtitle: {
-  //     text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/us/us-ut-all.js">Utah</a>'
-  // },
-
-  // mapNavigation: {
-  //     enabled: true,
-  //     buttonOptions: {
-  //         verticalAlign: 'bottom'
-  //     }
-  // },
   colorAxis: {
       min: 0
   },
