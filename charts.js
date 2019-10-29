@@ -1,5 +1,19 @@
 const charts = []
 
+const dataLabels = {
+  enabled: true,
+  crop: false,
+  overflow: 'none',
+  color: '#000',
+  align: 'center',
+  format: '{point.y}',
+  y: -5,
+  style: {
+    fontSize: '13px',
+    fontFamily: 'Verdana, sans-serif'
+  }
+}
+
 charts.push({
   c: "job-titles-chart",
   d: {
@@ -35,18 +49,7 @@ charts.push({
       name: 'Job Titles',
       data: [38, 84, 56, 16, 6],
       colorByPoint: true,
-      dataLabels: {
-        enabled: true,
-        rotation: -90,
-        color: '#fff',
-        align: 'right',
-        format: '{point.y:.1f}', // one decimal
-        y: 10, // 10 pixels down from the top
-        style: {
-          fontSize: '13px',
-          fontFamily: 'Verdana, sans-serif'
-        }
-      }
+      dataLabels
     }]
   }
 })
@@ -79,7 +82,8 @@ charts.push({
         text: 'Years of Experience'
       },
       min: 0,
-      max: 40
+      max: 40,
+      tickInterval: 5
     },
 
     series: [{
@@ -129,12 +133,12 @@ charts.push({
   },
     yAxis: {
         title: {
-            text: 'Experience in years'
+            text: 'Responses'
         },
-
+        tickInterval: 5
     },
     series: [{
-        name: 'Survey Responses',
+        name: 'Years of experience',
         data: [
           6,34,28,31,25,21,6,6,15,3,6,2,7,3,1,5,1,0,0,1,6,2,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1
         ]
@@ -162,12 +166,12 @@ charts.push({
     },
     yAxis: {
         title: {
-            text: 'Experience in years'
+            text: 'Responses'
         },
 
     },
     series: [{
-        name: 'Survey Responses',
+        name: 'Years of experience',
         data: [
           6,133,36,18,8,3,0,1,2
         ]
@@ -256,11 +260,13 @@ charts.push({
     },
     series: [{
         name: '2018',
-        data: [86.6, 10.31, 3.09]
+        data: [86.6, 10.31, 3.09],
+        dataLabels
 
     }, {
         name: '2019',
-        data: [88.9, 8.2, 2.9]
+        data: [88.9, 8.2, 2.9],
+        dataLabels
 
     }]
 }
@@ -293,7 +299,8 @@ charts.push({
       title: {
         text: 'Years of Experience'
       },
-      min: 0
+      min: 0,
+      tickInterval: 25000
     },
 
     series: [{
@@ -340,12 +347,13 @@ charts.push({
     yAxis: {
         title: {
             text: 'Total Compensation'
-        }
+        },
+        tickInterval: 25000
     },
     plotOptions: {
         scatter: {
             marker: {
-                radius: 3,
+                radius: 5,
                 states: {
                     hover: {
                         enabled: true,
@@ -475,12 +483,13 @@ charts.push({
     yAxis: {
         title: {
             text: 'Salary (base cash compensation)'
-        }
+        },
+        tickInterval: 25000
     },
     plotOptions: {
         scatter: {
             marker: {
-                radius: 3,
+                radius: 5,
                 states: {
                     hover: {
                         enabled: true,
@@ -547,7 +556,8 @@ charts.push({
     yAxis: {
         title: {
             text: 'Salary (base cash compensation)'
-        }
+        },
+        tickInterval: 25000
     },
     plotOptions: {
         scatter: {
@@ -619,12 +629,13 @@ charts.push({
     yAxis: {
         title: {
             text: 'Salary (base cash compensation)'
-        }
+        },
+        tickInterval: 25000
     },
     plotOptions: {
         scatter: {
             marker: {
-                radius: 3,
+                radius: 5,
                 states: {
                     hover: {
                         enabled: true,
@@ -691,7 +702,8 @@ charts.push({
     yAxis: {
         title: {
             text: 'Salary (base cash compensation)'
-        }
+        },
+        tickInterval: 25000
     },
     plotOptions: {
         scatter: {
@@ -748,7 +760,8 @@ charts.push({
       // labels: { style: { color: colors[0] } },
       title: {
         text: 'Compensation'
-    }
+      },
+      tickInterval: 25000
     }],
     xAxis:[{
       categories: ['Junior', 'Mid-level', 'Senior', 'Team Lead', 'People Manager'],
@@ -827,18 +840,7 @@ charts.push({
       name: 'Job Titles',
       data: [36, 62, 22, 66, 14, 7],
       colorByPoint: true,
-      dataLabels: {
-        enabled: true,
-        rotation: -90,
-        color: '#fff',
-        align: 'right',
-        format: '{point.y:.1f}', // one decimal
-        y: 10, // 10 pixels down from the top
-        style: {
-          fontSize: '13px',
-          fontFamily: 'Verdana, sans-serif'
-        }
-      }
+      dataLabels
     }]
   }
 })
@@ -877,7 +879,7 @@ charts.push({
         text: 'Total Compensation'
       },
       min: 0,
-      // max: 40
+      tickInterval: 25000
     },
 
     series: [{
@@ -1231,8 +1233,23 @@ charts.push({
     yAxis: {
       title: {
         text: 'Percent Increase'
-      }
-
+      },
+      tickInterval: 10,
+      // plotLines: [{
+      //   color: 'red', // Color value
+      //   dashStyle: 'longdashdot', // Style of the plot line. Default to solid
+      //   value: 0, // Value of where the line will appear
+      //   width: 2 // Width of the line
+      // }]
+      plotBands: [{
+        color: 'rgba(255,0,0,0.05)', // Color value
+        from: -20, // Start of the plot band
+        to: 0 // End of the plot band
+      },{
+        color: 'rgba(0,255,0,0.05)', // Color value
+        from: 0, // Start of the plot band
+        to: 100 // End of the plot band
+      }]
     },
 
     series: [{
@@ -1254,7 +1271,7 @@ charts.push({
         [1, -3.571428571]
       ],
       marker: {
-        fillColor: 'white',
+        fillColor: 'rgba(255,0,0,1)',
         lineWidth: 1,
         lineColor: "rgba(255,0,0,1)"
       },
@@ -1269,7 +1286,7 @@ charts.push({
         [0, 41.03],
       ],
       marker: {
-        fillColor: 'white',
+        fillColor: 'rgba(0,255,0,1)',
         lineWidth: 1,
         lineColor: "rgba(0,255,0,1)"
       },
@@ -1310,7 +1327,8 @@ charts.push({
     yAxis: {
         title: {
             text: 'Total Compensation'
-        }
+        },
+        tickInterval: 25000
     },
     plotOptions: {
         scatter: {
