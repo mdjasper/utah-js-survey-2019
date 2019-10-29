@@ -299,14 +299,14 @@ charts.push({
 
     yAxis: {
       title: {
-        text: 'Years of Experience'
+        text: 'Total Compensation'
       },
       min: 0,
       tickInterval: 25000
     },
 
     series: [{
-      name: 'Years of Experience',
+      name: 'Total Compensation',
       colorByPoint: true,
       lineWidth:3,
       data: [
